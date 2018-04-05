@@ -1,6 +1,5 @@
 # Quadratic
 import math
-import cmath
 
 def quadratic(a, b, c):
 	if(a == 0):
