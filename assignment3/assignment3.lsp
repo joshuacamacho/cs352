@@ -1,10 +1,10 @@
 (setf x  nil)
-(loop for num from 1 to 20
+(loop for num from 0 to 20
      do (setf x (cons (random 100) x)))
 (print x)
 
 (setf x  nil)
-(loop for num from 1 to 20
+(loop for num from 0 to 20
      do (setf x (cons (random 80.0) x)))
 (print x)
 

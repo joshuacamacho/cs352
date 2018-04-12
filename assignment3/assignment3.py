@@ -2,7 +2,7 @@ import random
 
 ints = []
 for x in range(20):
-	ints.append(random.randint(10,100))
+	ints.append(random.randint(0,100))
 print(ints)
 
 floats = []
