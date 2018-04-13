@@ -31,9 +31,9 @@ def pal(theList):
 	if listLength == 0:
 		return False
 	elif listLength == 1:
-		return True
+		return True if not isinstance(theList[0],(list,)) else False
 	elif listLength == 2:
-		return theList[0] == theList[1]
+		return (theList[0] == theList[1]) if (not isinstance(theList[0],(list,)) and not isinstance(theList[1],(list,))) else False
 	return theList[0] == theList[listLength-1] and pal(theList[1:listLength-1])
 print('\n\n\n')
 print(pal([]))
@@ -51,12 +51,16 @@ def pali(theList):
 	listLength = len(theList)
 	if listLength == 0:
 		return False
-	mid = listLength // 2
-	for top in theList[0:mid]:
-		for bottom in theList[mid+1: listLength-1]:
-			if(top != bottom):
-				return False
-	return True
+	backwards = []
+	for i in range(-1,-listLength-1,-1):
+		if isinstance(theList[i],(list,)):
+			return False
+		backwards.append(theList[i])
+	if theList == backwards:
+		return True
+	else:
+		return False
+
 print("\n\n\n")
 print(pali([]))
 print(pali('a'))
@@ -66,3 +70,34 @@ print(pali(['a', 'b', 'c', 'c', 'b', 'a']))
 print(pali(['a', 'b', 'c', 'a']))
 print(pali(['a', 'b', 'd', 'e', 'f', 'f', 'c', 'b', 'd', 'a']))
 print(pali([['a', 'b'], ['b', 'a']]))
+
+#output
+# 0
+# 1
+# 0
+# 3
+# 4
+
+
+
+
+# False
+# False
+# True
+# True
+# True
+# False
+# False
+# False
+
+
+
+
+# False
+# False
+# True
+# True
+# True
+# False
+# False
+# False
