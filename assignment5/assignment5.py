@@ -45,7 +45,29 @@ print(none([3,1,4,1,5,6]))
 def opSome(cond, op, a):
 	return list(map((lambda x: op(x) if cond(x) else x), a))
 
+print('\n')
 print(opSome((lambda x: x % 2 == 1), (lambda x: x * x), []))
 print(opSome((lambda x: x % 2 == 1), (lambda x: x * x), [2]))
 print(opSome((lambda x: x % 2 == 1), (lambda x: x * x), [3]))
 print(opSome((lambda x: x % 2 == 1), (lambda x: x * x), [3,6,4,5,2]))
+
+#output
+# [11, 3, 9]
+# [5, 3, 4]
+# [3, 1, 4]
+
+
+# [1, 2]
+# []
+
+
+# [0, 0]
+# [1, 0]
+# [0, 1]
+# [4, 2]
+
+
+# []
+# [2]
+# [9]
+# [9, 6, 4, 25, 2]
